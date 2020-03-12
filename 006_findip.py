@@ -23,9 +23,9 @@ for ip in re_findall_result:
 netmask = 'Network Mask'
 bro = 'Broadcast'
 ipadd = 'IPv4 Addr'
-print(f'{netmask:>15}' + ' : ' + f'{mask:<20}')
-print(f'{bro:>15}' + ' : ' + f'{broadcast:<20}')
-print(f'{ipadd:>15}' + ' : ' + f'{ipv4_ip:<20}')
+print(f'{netmask:>15}' + ' : ' + f'{mask:>20}')
+print(f'{bro:>15}' + ' : ' + f'{broadcast:>20}')
+print(f'{ipadd:>15}' + ' : ' + f'{ipv4_ip:>20}')
 # print(broadcast)
 # print(ipv4_ip)
 
