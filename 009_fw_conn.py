@@ -18,9 +18,9 @@ for x in fw_conn_split:
     # fw_dic = {key1[0]: value1[0]}
     fw_dic[key1[0]] = value1[0]
 
-print(fw_dic)   # 打印字典
+print(fw_dic, '\n')   # 打印字典
 
-# 格式化打印
+print('格式化打印输出\n')
 for k, v in fw_dic.items():
     print(f'{"src ":>10}:{k[0]:<20}|{"src_p ":>10}:{k[1]:<10}|{"dst ":>10}:{k[2]:<20}|{"dst_p ":>10}:{k[3]:<10}|\n'
           f'{"bytes ":>10}:{v[0]:<20}|{"flags ":>10}:{v[1]:<10}')
