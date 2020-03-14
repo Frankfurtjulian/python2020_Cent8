@@ -10,6 +10,7 @@ while True:
     except KeyboardInterrupt:
         print('Received ctrl+c from Admin!')
         print('Quit App!')
+        break
 
 if __name__ == '__main__':
     pass
