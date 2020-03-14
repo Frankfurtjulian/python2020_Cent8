@@ -20,3 +20,22 @@ for y in l2:
 
 if __name__ == '__main__':
     pass
+
+
+# 方案二：修改为函数的更加通用的方案
+
+#
+# def find_same(list1, list2):
+#     for i in list1:
+#         for j in list2:
+#             if i == j:
+#                 print(i, ' in list1 and list2')
+#                 break
+#         else:
+#             print(i, ' only in list1')
+#
+#
+# if __name__ == '__main__':
+#     x = ['aaa', 111, (4, 5), 2.01]
+#     y = ['bbb', 333, 111, 3.14, (4, 5)]
+#     find_same(x, y)
