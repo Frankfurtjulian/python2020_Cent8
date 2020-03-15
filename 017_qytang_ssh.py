@@ -12,6 +12,8 @@ def qytang_ssh(ip, username, password, port=22, cmd='ls'):
     ssh.connect(ip, username=username, password=password, port=port, timeout=5, compress=True)
     stdin, stdout, stderr = ssh.exec_command(cmd)
     x = stdout.read().decode()
+    ssh.close()
+    # await asynico.sleep(1)
     return x
 
 
