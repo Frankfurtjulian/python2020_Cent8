@@ -4,11 +4,16 @@
 import logging
 import getpass
 from kamene.all import *
+from kamene.layers.inet import ICMP
+from scapy.layers.inet import IP
+
 logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 
+# 思路是copy上次learning的code
 
-def qytang_ping(ip):
-    ping_pkt = IP(dst=ip)/ICMP()
+
+def qytang_ping(x):
+    ping_pkt = IP(dst=x)/ICMP()
     ping_result = sr1(ping_pkt, timeout=2, verbose=False)
     if ping_result:
         return True
