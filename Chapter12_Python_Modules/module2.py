@@ -2,9 +2,10 @@
 # -*- coding=utf-8 -*-
 # 本脚本由黄猛编写，用于Python学习！
 
-x = 100
+x = 200
 y = [1, 2]
-
+print(x, y)
 
 if __name__ == '__main__':
-    pass
+    print("x: ", x, end='')
+    print("y: ", y)
