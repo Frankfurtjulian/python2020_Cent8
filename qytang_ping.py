@@ -4,8 +4,8 @@
 import logging
 import getpass
 from kamene.all import *
-from kamene.layers.inet import ICMP
-from scapy.layers.inet import IP
+# from kamene.layers.inet import ICMP
+# from scapy.layers.inet import IP
 
 logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 
@@ -22,9 +22,32 @@ def qytang_ping(x):
 
 
 if __name__ == '__main__':
-    ip = getpass.getpass('Please input a IPv4 address:')
+    # i = '192.168.213.128'
+    i = getpass.getpass('Please input a IPv4 address:')
     # result = qytang_ping(ip)
-    if qytang_ping(ip):
-        print(ip, '通！')
+    if qytang_ping(i):
+        print(i, '通！')
     else:
-        print(ip, '不通！')
+        print(i, '不通！')
+
+
+# import logging
+# logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
+# from scapy.all import *
+#
+#
+# def qytang_ping(ip):
+#     ping_pkt = IP(dst=ip) / ICMP()
+#     ping_result = sr1(ping_pkt, timeout=2, verbose=False)
+#     if ping_result:
+#         return ip,1
+#     else:
+#         return ip,0
+#
+#
+# if __name__ == '__main__':
+#     result = qytang_ping('192.168.213.2')
+#     if result[1]:
+#         print(result[0], '通!')
+#     else:
+#         print(result[0], '不通!')
