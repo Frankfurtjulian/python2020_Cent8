@@ -13,7 +13,7 @@ logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 
 
 def qytang_ping(x):
-    ping_pkt = IP(dst=x)/ICMP()
+    ping_pkt = IP(dst=x)/ICMP()/(b'h'*100)  # 前两天发现ping不同外网，今天做类的时候才发现原来是ping包的size过小导致的
     ping_result = sr1(ping_pkt, timeout=2, verbose=False)
     if ping_result:
         return True
