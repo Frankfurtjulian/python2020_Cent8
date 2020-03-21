@@ -21,3 +21,4 @@ args = parser.parse_args()
 if __name__ == '__main__':
     # print(output)
     print(qytang_ssh(ip=args.ip, username=args.username, password=args.password, cmd=args.cmd))
+    # print(qytang_ssh(args.ip, args.username, args.password, args.cmd))  这个语句运行就有问题，貌似参数没有传过去......
