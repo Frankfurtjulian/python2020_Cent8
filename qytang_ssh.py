@@ -19,5 +19,6 @@ def qytang_ssh(ip, username, password, port=22, cmd='ls'):
 
 if __name__ == '__main__':
     print(qytang_ssh('192.168.213.128', 'root', 'root'))
-    print(qytang_ssh('192.168.213.128', 'root', 'root', cmd='pwd'))
+    # qytang_ssh('192.168.213.128', 'root', 'root')
+    # print(qytang_ssh('192.168.213.128', 'root', 'root', cmd='pwd'))
 
