@@ -7,7 +7,7 @@ import threading
 
 
 def qyt_multi(x, y, z):  # 打印进程和线程ID
-    print('pid tid ==>', os.getpid(), threading.currentThread().ident)
+    # print('pid tid ==>', os.getpid(), threading.currentThread().ident)
     i = 1
     sum_x_y_z = 0
     while i < 10:
