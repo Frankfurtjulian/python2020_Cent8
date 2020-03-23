@@ -26,8 +26,10 @@ class Qytping:  # 把ping模块改成类
         ping_result = sr1(self.pkt, timeout=2, verbose=False)
         if ping_result:
             print(self.ip, "is reachable!!!测试正常，IP地址通！！！")
+            return 1
         else:
             print(self.ip, "is unreachable!!!测试失败，IP地址不通！！！")
+            return 0
 
     def ping(self):
         self.pkt = IP(dst=self.ip, src=self.srcip) / ICMP() / (b'h' * self.length)
