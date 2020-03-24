@@ -6,7 +6,7 @@ from multiprocessing import Pool as ProcessPool
 import ipaddress
 import pickle
 from datetime import datetime
-from Class_Ping import Qytping
+from scapy_ping_one_new import scapy_ping_one
 
 
 def ping_scan(network):
@@ -18,25 +18,33 @@ def ping_scan(network):
 
     for ip in net:
         # 获取返回的对象
-        ping = Qytping(ip=str(ip))
-        result_obj = pool.apply_async(ping.one())
+        result_obj = pool.apply_async(scapy_ping_one, args=(str(ip),))
         result_obj_dict[str(ip)] = result_obj
 
     pool.close()
     pool.join()
 
-    print(result_obj_dict)
+    # print(result_obj_dict)
 
     active_ip = []
 
     for ip, obj in result_obj_dict.items():
+        # print(obj.get())
         if obj.get()[1] == 1:
             active_ip.append(ip)
 
-    print(active_ip)
+    # print(active_ip)
     return active_ip
 
 
 if __name__ == '__main__':
     now = datetime.now()
-    ping_scan('192.168.213.0/24')
+    otherStyleTime = now.strftime("%Y-%m-%d_%H-%M-%S")
+    scan_filename = 'sacn_save_pickle_' + otherStyleTime + '.pl'
+    scan_file = open(scan_filename, 'wb')
+    pickle.dump(ping_scan('192.168.213.0/26'), scan_file)
+    scan_file.close()
+    scan_file = open(scan_filename, 'rb')
+    scan_result_list = pickle.load(scan_file)
+    print(scan_result_list)
+    # ping_scan('192.168.213.0/29')
